@@ -3,13 +3,14 @@
 
 %if 0%{?fedora}
 %global with_python3 1
+%global with_docs 1
 %endif
 
 %{!?_licensedir: %global license %%doc}
 
 Name:           python-%{sname}
 Version:        1.10.4
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -27,6 +28,7 @@ The aim of the wrapt module is to provide a transparent object proxy
 for Python, which can be used as the basis for the construction of
 function wrappers and decorator functions.
 
+%if 0%{?with_docs}
 %package doc
 Summary:        Documentation for the wrapt module
 
@@ -35,6 +37,7 @@ BuildRequires:  python-sphinx_rtd_theme
 
 %description doc
 Documentation for the wrapt module
+%endif
 
 %if 0%{?with_python3}
 %package -n python3-wrapt
@@ -64,10 +67,12 @@ CFLAGS="$RPM_OPT_FLAGS" %{__python3} setup.py build
 popd
 %endif
 
+%if 0%{?with_docs}
 # for docs
 pushd docs
 sphinx-build -b html -d build/doctrees . build/html
 popd
+%endif
 
 %install
 %if 0%{?with_python3}
@@ -83,8 +88,10 @@ popd
 %{python2_sitearch}/%{sname}
 %{python2_sitearch}/%{sname}-%{version}-py?.?.egg-info
 
+%if 0%{?with_docs}
 %files doc
 %doc docs/build/html
+%endif
 
 %if 0%{?with_python3}
 %files -n python3-wrapt
@@ -95,6 +102,9 @@ popd
 %endif
 
 %changelog
+* Fri May 15 2015 Ralph Bean <rbean@redhat.com> - 1.10.4-6
+- Don't build docs on epel7 (the rtd theme is problematic).
+
 * Sat Apr 11 2015 Ralph Bean <rbean@redhat.com> - 1.10.4-5
 - Add python3 subpackage
 
