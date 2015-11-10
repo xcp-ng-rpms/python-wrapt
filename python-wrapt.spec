@@ -10,7 +10,7 @@
 
 Name:           python-%{sname}
 Version:        1.10.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -102,6 +102,9 @@ popd
 %endif
 
 %changelog
+* Tue Nov 10 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.10.5-2
+- Rebuilt for https://fedoraproject.org/wiki/Changes/python3.5
+
 * Mon Jul 06 2015 Ralph Bean <rbean@redhat.com> - 1.10.5-1
 - new version
 
