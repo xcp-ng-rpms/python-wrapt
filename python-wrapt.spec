@@ -9,8 +9,8 @@
 %{!?_licensedir: %global license %%doc}
 
 Name:           python-%{sname}
-Version:        1.10.5
-Release:        3%{?dist}
+Version:        1.10.7
+Release:        1%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -83,7 +83,7 @@ popd
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
 %files
-%doc README
+%doc README.rst
 %license LICENSE
 %{python2_sitearch}/%{sname}
 %{python2_sitearch}/%{sname}-%{version}-py?.?.egg-info
@@ -95,13 +95,16 @@ popd
 
 %if 0%{?with_python3}
 %files -n python3-wrapt
-%doc README
+%doc README.rst
 %license LICENSE
 %{python3_sitearch}/%{sname}
 %{python3_sitearch}/%{sname}-%{version}-py?.?.egg-info
 %endif
 
 %changelog
+* Mon Apr 04 2016 Ralph Bean <rbean@redhat.com> - 1.10.7-1
+- new version
+
 * Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.10.5-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
