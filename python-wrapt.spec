@@ -9,7 +9,7 @@
 %{!?_licensedir: %global license %%doc}
 
 Name:           python-%{sname}
-Version:        1.10.7
+Version:        1.10.8
 Release:        1%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
@@ -102,6 +102,9 @@ popd
 %endif
 
 %changelog
+* Fri Apr 15 2016 Kevin Fenzi <kevin@scrye.com> - 1.10.8-1
+- Update to 1.10.8. Fixes bug #1325923
+
 * Mon Apr 04 2016 Ralph Bean <rbean@redhat.com> - 1.10.7-1
 - new version
 
