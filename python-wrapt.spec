@@ -10,7 +10,7 @@
 
 Name:           python-%{sname}
 Version:        1.10.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -102,6 +102,9 @@ popd
 %endif
 
 %changelog
+* Tue Jul 19 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.10.8-2
+- https://fedoraproject.org/wiki/Changes/Automatic_Provides_for_Python_RPM_Packages
+
 * Fri Apr 15 2016 Kevin Fenzi <kevin@scrye.com> - 1.10.8-1
 - Update to 1.10.8. Fixes bug #1325923
 
