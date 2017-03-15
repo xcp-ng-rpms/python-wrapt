@@ -9,7 +9,7 @@
 %{!?_licensedir: %global license %%doc}
 
 Name:           python-%{sname}
-Version:        1.10.9
+Version:        1.10.10
 Release:        1%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
@@ -102,6 +102,9 @@ popd
 %endif
 
 %changelog
+* Wed Mar 15 2017 Ralph Bean <rbean@redhat.com> - 1.10.10-1
+- new version
+
 * Wed Mar 15 2017 Ralph Bean <rbean@redhat.com> - 1.10.9-1
 - new version
 
