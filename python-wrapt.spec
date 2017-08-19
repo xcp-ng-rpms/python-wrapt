@@ -10,7 +10,7 @@
 
 Name:           python-%{sname}
 Version:        1.10.10
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -23,10 +23,18 @@ BuildRequires:  python2-devel
 BuildRequires:  python3-devel
 %endif
 
-%description
-The aim of the wrapt module is to provide a transparent object proxy
-for Python, which can be used as the basis for the construction of
+%global _description\
+The aim of the wrapt module is to provide a transparent object proxy\
+for Python, which can be used as the basis for the construction of\
 function wrappers and decorator functions.
+
+%description %_description
+
+%package -n python2-wrapt
+Summary: %summary
+%{?python_provide:%python_provide python2-wrapt}
+
+%description -n python2-wrapt %_description
 
 %if 0%{?with_docs}
 %package doc
@@ -82,7 +90,7 @@ popd
 %endif
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
-%files
+%files -n python2-wrapt
 %doc README.rst
 %license LICENSE
 %{python2_sitearch}/%{sname}
@@ -102,6 +110,10 @@ popd
 %endif
 
 %changelog
+* Sat Aug 19 2017 Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl> - 1.10.10-4
+- Python 2 binary package renamed to python2-wrapt
+  See https://fedoraproject.org/wiki/FinalizingFedoraSwitchtoPython3
+
 * Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.10.10-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
