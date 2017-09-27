@@ -1,7 +1,7 @@
 # Created by pyp2rpm-1.1.1
 %global sname wrapt
 
-%if 0%{?fedora}
+%if 0%{?fedora} || 0%{?rhel} >= 8
 %global with_python3 1
 %global with_docs 1
 %endif
@@ -10,7 +10,7 @@
 
 Name:           python-%{sname}
 Version:        1.10.10
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -110,6 +110,9 @@ popd
 %endif
 
 %changelog
+* Wed Sep 27 2017 Troy Dawson <tdawson@redhat.com> - 1.10.10-5
+- Cleanup spec file conditionals
+
 * Sat Aug 19 2017 Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl> - 1.10.10-4
 - Python 2 binary package renamed to python2-wrapt
   See https://fedoraproject.org/wiki/FinalizingFedoraSwitchtoPython3
