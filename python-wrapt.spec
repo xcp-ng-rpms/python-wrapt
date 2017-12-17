@@ -9,8 +9,8 @@
 %{!?_licensedir: %global license %%doc}
 
 Name:           python-%{sname}
-Version:        1.10.10
-Release:        5%{?dist}
+Version:        1.10.11
+Release:        1%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -110,6 +110,9 @@ popd
 %endif
 
 %changelog
+* Sun Dec 17 2017 Kevin Fenzi <kevin@scrye.com> - 1.10.11-1
+- Update to 1.10.11. Fixes bug #1480582
+
 * Wed Sep 27 2017 Troy Dawson <tdawson@redhat.com> - 1.10.10-5
 - Cleanup spec file conditionals
 
