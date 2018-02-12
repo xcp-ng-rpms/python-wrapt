@@ -10,7 +10,7 @@
 
 Name:           python-%{sname}
 Version:        1.10.11
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -40,8 +40,8 @@ Summary: %summary
 %package doc
 Summary:        Documentation for the wrapt module
 
-BuildRequires:  python-sphinx
-BuildRequires:  python-sphinx_rtd_theme
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-sphinx_rtd_theme
 
 %description doc
 Documentation for the wrapt module
@@ -110,6 +110,10 @@ popd
 %endif
 
 %changelog
+* Mon Feb 12 2018 Iryna Shcherbina <ishcherb@redhat.com> - 1.10.11-3
+- Update Python 2 dependency declarations to new packaging standards
+  (See https://fedoraproject.org/wiki/FinalizingFedoraSwitchtoPython3)
+
 * Fri Feb 09 2018 Fedora Release Engineering <releng@fedoraproject.org> - 1.10.11-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
