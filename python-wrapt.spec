@@ -17,6 +17,7 @@ License:        BSD
 URL:            https://github.com/GrahamDumpleton/wrapt
 Source0:        https://github.com/GrahamDumpleton/%{sname}/archive/%{version}.tar.gz
 
+BuildRequires:  gcc
 BuildRequires:  python2-devel
 
 %if 0%{?with_python3}
