@@ -10,7 +10,7 @@
 
 Name:           python-%{sname}
 Version:        1.10.11
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -111,6 +111,9 @@ popd
 %endif
 
 %changelog
+* Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.10.11-6
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Sat Jul 14 2018 Fedora Release Engineering <releng@fedoraproject.org> - 1.10.11-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
