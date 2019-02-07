@@ -9,8 +9,8 @@
 %{!?_licensedir: %global license %%doc}
 
 Name:           python-%{sname}
-Version:        1.10.11
-Release:        6%{?dist}
+Version:        1.11.1
+Release:        1%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -111,6 +111,9 @@ popd
 %endif
 
 %changelog
+* Thu Feb 07 2019 Javier Peña <jpena@redhat.com> - 1.11.1-1
+- Update to upstream 1.11.1
+
 * Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.10.11-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
