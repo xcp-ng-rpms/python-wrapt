@@ -72,7 +72,7 @@ cp -a . %{py3dir}
 CFLAGS="$RPM_OPT_FLAGS" %{__python2} setup.py build
 %if 0%{?with_python3}
 pushd %{py3dir}
-CFLAGS="$RPM_OPT_FLAGS" %{__python3} setup.py build
+%py3_build
 popd
 %endif
 
@@ -86,7 +86,7 @@ popd
 %install
 %if 0%{?with_python3}
 pushd %{py3dir}
-%{__python3} setup.py install --skip-build --root %{buildroot}
+%py3_install
 popd
 %endif
 %{__python2} setup.py install --skip-build --root %{buildroot}
