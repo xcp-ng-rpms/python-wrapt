@@ -41,8 +41,8 @@ Summary: %summary
 %package doc
 Summary:        Documentation for the wrapt module
 
-BuildRequires:  python2-sphinx
-BuildRequires:  python2-sphinx_rtd_theme
+BuildRequires:  python3-sphinx
+BuildRequires:  python3-sphinx_rtd_theme
 
 %description doc
 Documentation for the wrapt module
