@@ -2,7 +2,6 @@
 %global sname wrapt
 
 %if 0%{?fedora} || 0%{?rhel} >= 8
-%global with_python3 1
 %global with_docs 1
 %endif
 
@@ -10,7 +9,7 @@
 
 Name:           python-%{sname}
 Version:        1.11.2
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -18,11 +17,8 @@ URL:            https://github.com/GrahamDumpleton/wrapt
 Source0:        https://github.com/GrahamDumpleton/%{sname}/archive/%{version}.tar.gz
 
 BuildRequires:  gcc
-BuildRequires:  python2-devel
 
-%if 0%{?with_python3}
 BuildRequires:  python3-devel
-%endif
 
 %global _description\
 The aim of the wrapt module is to provide a transparent object proxy\
@@ -30,12 +26,6 @@ for Python, which can be used as the basis for the construction of\
 function wrappers and decorator functions.
 
 %description %_description
-
-%package -n python2-wrapt
-Summary: %summary
-%{?python_provide:%python_provide python2-wrapt}
-
-%description -n python2-wrapt %_description
 
 %if 0%{?with_docs}
 %package doc
@@ -48,33 +38,23 @@ BuildRequires:  python3-sphinx_rtd_theme
 Documentation for the wrapt module
 %endif
 
-%if 0%{?with_python3}
 %package -n python3-wrapt
 Summary:        A Python module for decorators, wrappers and monkey patching
+%{?python_provide:%python_provide python3-wrapt}
 
 %description -n python3-wrapt
 The aim of the wrapt module is to provide a transparent object proxy
 for Python, which can be used as the basis for the construction of
 function wrappers and decorator functions.
-%endif
 
 %prep
 %setup -q -n %{sname}-%{version}
 
 # Remove bundled egg-info in case it exists
 rm -rf %{sname}.egg-info
-%if 0%{?with_python3}
-rm -rf %{py3dir}
-cp -a . %{py3dir}
-%endif
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" %{__python2} setup.py build
-%if 0%{?with_python3}
-pushd %{py3dir}
 %py3_build
-popd
-%endif
 
 %if 0%{?with_docs}
 # for docs
@@ -84,33 +64,24 @@ popd
 %endif
 
 %install
-%if 0%{?with_python3}
-pushd %{py3dir}
 %py3_install
-popd
-%endif
-%{__python2} setup.py install --skip-build --root %{buildroot}
-
-%files -n python2-wrapt
-%doc README.rst
-%license LICENSE
-%{python2_sitearch}/%{sname}
-%{python2_sitearch}/%{sname}-%{version}-py?.?.egg-info
 
 %if 0%{?with_docs}
 %files doc
 %doc docs/build/html
 %endif
 
-%if 0%{?with_python3}
 %files -n python3-wrapt
 %doc README.rst
 %license LICENSE
 %{python3_sitearch}/%{sname}
 %{python3_sitearch}/%{sname}-%{version}-py?.?.egg-info
-%endif
 
 %changelog
+* Wed Sep 11 2019 Miro Hrončok <mhroncok@redhat.com> - 1.11.2-4
+- Subpackage python2-wrapt has been removed
+  See https://fedoraproject.org/wiki/Changes/Mass_Python_2_Package_Removal
+
 * Fri Aug 16 2019 Miro Hrončok <mhroncok@redhat.com> - 1.11.2-3
 - Rebuilt for Python 3.8
 
