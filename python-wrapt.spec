@@ -9,7 +9,7 @@
 
 Name:           python-%{sname}
 Version:        1.11.2
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -78,6 +78,9 @@ popd
 %{python3_sitearch}/%{sname}-%{version}-py?.?.egg-info
 
 %changelog
+* Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.11.2-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Wed Sep 11 2019 Miro Hrončok <mhroncok@redhat.com> - 1.11.2-4
 - Subpackage python2-wrapt has been removed
   See https://fedoraproject.org/wiki/Changes/Mass_Python_2_Package_Removal
