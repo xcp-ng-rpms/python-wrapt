@@ -8,8 +8,8 @@
 %{!?_licensedir: %global license %%doc}
 
 Name:           python-%{sname}
-Version:        1.11.2
-Release:        5%{?dist}
+Version:        1.12.1
+Release:        1%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -78,6 +78,9 @@ popd
 %{python3_sitearch}/%{sname}-%{version}-py?.?.egg-info
 
 %changelog
+* Tue Mar 17 2020 Clément Verna <cverna@fedoraproject.org> - 1.12.1-1
+- Update to 1.12.1. Fixes bug #1803787
+
 * Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.11.2-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
