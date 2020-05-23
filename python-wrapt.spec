@@ -9,7 +9,7 @@
 
 Name:           python-%{sname}
 Version:        1.12.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -78,6 +78,9 @@ popd
 %{python3_sitearch}/%{sname}-%{version}-py?.?.egg-info
 
 %changelog
+* Sat May 23 2020 Miro Hrončok <mhroncok@redhat.com> - 1.12.1-2
+- Rebuilt for Python 3.9
+
 * Tue Mar 17 2020 Clément Verna <cverna@fedoraproject.org> - 1.12.1-1
 - Update to 1.12.1. Fixes bug #1803787
 
