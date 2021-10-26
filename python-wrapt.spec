@@ -8,8 +8,8 @@
 %{!?_licensedir: %global license %%doc}
 
 Name:           python-%{sname}
-Version:        1.12.1
-Release:        6%{?dist}
+Version:        1.13.2
+Release:        1%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
 License:        BSD
@@ -78,6 +78,9 @@ popd
 %{python3_sitearch}/%{sname}-%{version}-py%{python3_version}.egg-info
 
 %changelog
+* Tue Oct 26 2021 Joel Capitao <jcapitao@redhat.com> - 1.13.2-1
+- Update to 1.13.2
+
 * Tue Jul 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 1.12.1-6
 - Second attempt - Rebuilt for
   https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
