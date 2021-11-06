@@ -8,7 +8,7 @@
 %{!?_licensedir: %global license %%doc}
 
 Name:           python-%{sname}
-Version:        1.13.2
+Version:        1.13.3
 Release:        1%{?dist}
 Summary:        A Python module for decorators, wrappers and monkey patching
 
@@ -78,6 +78,9 @@ popd
 %{python3_sitearch}/%{sname}-%{version}-py%{python3_version}.egg-info
 
 %changelog
+* Sat Nov 06 2021 Kevin Fenzi <kevin@scrye.com> - 1.13.3-1
+- Update to 1.13.3. Fixes rhbz#2010551
+
 * Tue Oct 26 2021 Joel Capitao <jcapitao@redhat.com> - 1.13.2-1
 - Update to 1.13.2
 
