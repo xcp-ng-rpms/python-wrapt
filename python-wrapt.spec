@@ -8,7 +8,7 @@
 %{!?_licensedir: %global license %%doc}
 
 Name:           python-%{sname}
-Version:        1.13.3
+Version:        1.14.0
 Release:        %autorelease
 Summary:        A Python module for decorators, wrappers and monkey patching
 
@@ -20,10 +20,10 @@ BuildRequires:  gcc
 
 BuildRequires:  python3-devel
 
-%global _description\
-The aim of the wrapt module is to provide a transparent object proxy\
-for Python, which can be used as the basis for the construction of\
-function wrappers and decorator functions.
+%global _description %{expand:
+The aim of the wrapt module is to provide a transparent object proxy
+for Python, which can be used as the basis for the construction of
+function wrappers and decorator functions.}
 
 %description %_description
 
